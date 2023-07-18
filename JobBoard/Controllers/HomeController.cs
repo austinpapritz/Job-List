@@ -18,9 +18,9 @@ using System.Collections.Generic;
     }
 
     [HttpPost("/openings")]
-    public ActionResult Create(string name, string email, int idnumber, string phonenumber)
+    public ActionResult Create(string name, string email, int idnumber, string phonenumber, string gender)
     {
-      JobOpening newJobOpening = new JobOpening( name, email, idnumber, phonenumber);
+      JobOpening newJobOpening = new JobOpening( name, email, idnumber, phonenumber, gender);
       List<JobOpening> allJobOpenings = JobOpening.GetAll();
       return RedirectToAction("Index", allJobOpenings);
     }

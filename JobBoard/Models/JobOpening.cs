@@ -10,15 +10,18 @@ namespace JobBoard.Models;
 
     public string PhoneNumber { get; set; }
 
+    public string Gender { get; set; }
+
 
     public static List<JobOpening> _instances = new List<JobOpening> {};
 
-    public JobOpening( string name, string email , int idnumber, string phonenumber)
+    public JobOpening( string name, string email , int idnumber, string phonenumber, string gender)
     {
       Name = name;
       Email = email;
       IDNumber = idnumber;
       PhoneNumber = phonenumber;
+      Gender = gender;
 
       _instances.Add(this);
     }
