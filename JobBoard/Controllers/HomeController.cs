@@ -1,5 +1,6 @@
 using JobBoard.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
   public class HomeController : Controller
   {
@@ -18,8 +19,8 @@ using Microsoft.AspNetCore.Mvc;
     [HttpPost("/openings")]
     public ActionResult Create(string name)
     {
-      // GetAll() job openings and send to View
       JobOpening newJobOpening = new JobOpening( name );
-      return View( "Index", newJobOpening );
+      List<JobOpening> allJobOpenings = JobOpening.GetAll();
+      return View( "Index", allJobOpenings );
     }
   }

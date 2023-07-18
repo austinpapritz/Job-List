@@ -11,18 +11,18 @@ namespace JobBoard.UnitTests
         [TestMethod]
         public void JobOpeningConstructor_AddInstanceToList_JobOpeningList()
         {
-            // Arrange
+   
             string name1 = "Maria";
             string name2 = "Parker";
-            JobOpening job1 = new JobOpening(name1);
-            JobOpening job2 = new JobOpening(name2);
-            List<JobOpening> expectedList = new List<JobOpening> { job1, job2 };
+            JobOpening job1 = new(name1);
+            JobOpening job2 = new(name2);
+            List<JobOpening> expectedList = new() { job1, job2 };
 
-            // Act
+   
             List<JobOpening> result = JobOpening.GetAll();
 
-            // Assert
+
             CollectionAssert.AreEqual(expectedList, result);
-        }
+         }
     }
 }
