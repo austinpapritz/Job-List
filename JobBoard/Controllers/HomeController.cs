@@ -7,9 +7,9 @@ namespace JobOpening.Controllers
   {
 
     [Route("/")]
-    public string Index()
+    public ActionResult Index()
     {
-      return "Karate";
+      return View();
     }
 
   }
