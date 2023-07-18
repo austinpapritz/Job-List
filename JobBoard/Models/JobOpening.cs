@@ -1,0 +1,4 @@
+namespace JobOpening.Models
+{
+  
+}
