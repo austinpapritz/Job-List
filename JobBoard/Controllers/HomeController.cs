@@ -3,22 +3,22 @@ using Microsoft.AspNetCore.Mvc;
 
   public class HomeController : Controller
   {
-    [Route("/")] // Get
-    public ActionResult Index( string name )
+    [HttpGet("/")]
+    public ActionResult Index()
     {
-      JobOpening newJobOpening = new JobOpening( name );
-      return View( newJobOpening );
+      return View();
     }
     
-    [Route("/openings/new")] // Get
+    [HttpGet("/openings/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [Route("/openings")] // Post
+    [HttpPost("/openings")]
     public ActionResult Create(string name)
     {
+      // GetAll() job openings and send to View
       JobOpening newJobOpening = new JobOpening( name );
       return View( "Index", newJobOpening );
     }
