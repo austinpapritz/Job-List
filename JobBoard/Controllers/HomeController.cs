@@ -7,7 +7,8 @@ using System.Collections.Generic;
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      List<JobOpening> allJobOpenings = JobOpening.GetAll();
+      return View(allJobOpenings);
     }
     
     [HttpGet("/openings/new")]
@@ -17,10 +18,10 @@ using System.Collections.Generic;
     }
 
     [HttpPost("/openings")]
-    public ActionResult Create(string name)
+    public ActionResult Create(string name, string email, int idnumber, string phonenumber)
     {
-      JobOpening newJobOpening = new JobOpening( name );
+      JobOpening newJobOpening = new JobOpening( name, email, idnumber, phonenumber);
       List<JobOpening> allJobOpenings = JobOpening.GetAll();
-      return View( "Index", allJobOpenings );
+      return RedirectToAction("Index", allJobOpenings);
     }
   }
