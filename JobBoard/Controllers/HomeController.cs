@@ -32,4 +32,5 @@ public class HomeController : Controller
     List<JobOpening> allJobOpenings = JobOpening.GetAll();
     return View("Index", allJobOpenings);
   }
+  
 }

@@ -19,14 +19,13 @@
     <div class="container">
         @foreach (var job in Model)
         {
+          <a href="/job/@job.Id">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@job.Name</h5>
-                    <h5 class="card-email">@job.Email</h5>
-                    <h5 class="card-phonenumber">@job.PhoneNumber</h5>  
-                    <h5 class="card-gender">@job.Gender</h5>
                 </div>
             </div>
+          </a>
         }
     </div>
     }
