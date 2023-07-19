@@ -13,24 +13,31 @@
     <h1> Please fill out this form</h1>
     <form action="/jobs" method="post">
     
-      @* Name *@
-      <label for="name">Add a name</label>
+      @* Job Title *@
+      <label for="jobTitle">Job Title</label>
+      <input id="jobTitle" name="jobTitle" type="text">
+
+      @* Job Description *@
+
+      <label for="jobDescription">Job Description</label>
+      <input id="jobDescription" name="jobDescription" type="text">
+
+      @* Recruiter Name *@
+      
+      <label for="name">Recruiter Name</label>
       <input id="name" name="name" type="text">
 
-      @* Contact info *@
-      <label for="email">Add your email</label>
+      @* Recruiter Email *@
+      <label for="email">Recruiter Email</label>
       <input id="email" name="email" type="text">
 
       @* Phone Number *@
-      <label for="phonenumber">Add your Phone Number</label>
+      <label for="phonenumber">Recruiter Phone Number</label>
       <input id="phonenumber" name="phonenumber" type="text">
 
-      @* Gender *@
-      <label for="gender"> Select your gender</label>
-      <select id="gender" name="gender">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      </select>
+      @* Background *@
+      <label for="phonenumber">Recruiter Profile</label>
+      <input id="phonenumber" name="phonenumber" type="text">
       
       <button type="submit">Submit</button>
       

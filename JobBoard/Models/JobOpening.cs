@@ -10,17 +10,17 @@ public class JobOpening
 
   public string PhoneNumber { get; set; }
 
-  public string Gender { get; set; }
+  public string Description { get; set; }
 
 
   public static List<JobOpening> _instances = new List<JobOpening> { };
 
-  public JobOpening(string name, string email, string phonenumber, string gender)
+  public JobOpening(string name, string email, string phonenumber, string description)
   {
     Name = name;
     Email = email;
     PhoneNumber = phonenumber;
-    Gender = gender;
+    Description = gender;
 
     _instances.Add(this);
     Id = _instances.Count;
