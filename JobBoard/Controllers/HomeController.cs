@@ -11,21 +11,21 @@ using System.Collections.Generic;
       return View(allJobOpenings);
     }
     
-    [HttpGet("/openings/new")]
+    [HttpGet("/jobs/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [HttpPost("/openings")]
-    public ActionResult Create(string name, string email, int idnumber, string phonenumber, string gender)
+    [HttpPost("/jobs")]
+    public ActionResult Create(string name, string email, string phonenumber, string gender)
     {
-      JobOpening newJobOpening = new JobOpening( name, email, idnumber, phonenumber, gender);
+      JobOpening newJobOpening = new JobOpening( name, email, phonenumber, gender);
       List<JobOpening> allJobOpenings = JobOpening.GetAll();
       return RedirectToAction("Index", allJobOpenings);
     }
 
-    [HttpPost("/openings/delete")]
+    [HttpPost("/jobs/delete")]
     public ActionResult Destroy()
     {
       JobOpening.ClearAll();

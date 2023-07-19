@@ -8,21 +8,36 @@ namespace JobBoard.UnitTests
     [TestClass]
     public class JobOpeningTests
     {
-        [TestMethod]
-        public void JobOpeningConstructor_AddInstanceToList_JobOpeningList()
-        {
+        // [Ignore]
+        // [TestMethod]
+        // public void JobOpeningConstructor_AddInstanceToList_JobOpeningList()
+        // {
    
-            string name1 = "Maria";
-            string name2 = "Parker";
-            JobOpening job1 = new(name1);
-            JobOpening job2 = new(name2);
-            List<JobOpening> expectedList = new() { job1, job2 };
+        //     string name1 = "Maria";
+        //     string name2 = "Parker";
+        //     JobOpening job1 = new (name1);
+        //     JobOpening job2 = new (name2);
+        //     List<JobOpening> expectedList = new() { job1, job2 };
 
    
-            List<JobOpening> result = JobOpening.GetAll();
+        //     List<JobOpening> result = JobOpening.GetAll();
 
 
-            CollectionAssert.AreEqual(expectedList, result);
+        //     CollectionAssert.AreEqual(expectedList, result);
+        //  }
+
+         [TestMethod]
+         public void JobOpeningConstructor_GeneratingUniqueId_JobOpeningId01()
+         {
+            //Arrange
+            int expectedID = 1;
+            JobOpening testJob = new( "Erik", "erik@gmail.com", "1", "Male");
+
+            //Act
+            int result = testJob.Id;
+
+            //Assert
+            Assert.AreEqual(expectedID, result);
          }
     }
 }

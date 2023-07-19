@@ -23,7 +23,6 @@
                 <div class="card-body">
                     <h5 class="card-title">@job.Name</h5>
                     <h5 class="card-email">@job.Email</h5>
-                    <h5 class="card-IDnumber">@job.IDNumber</h5>
                     <h5 class="card-phonenumber">@job.PhoneNumber</h5>  
                     <h5 class="card-gender">@job.Gender</h5>
                 </div>
@@ -32,9 +31,9 @@
     </div>
     }
     
-    <a href="/openings/new">Create a new job opening</a>
+    <a href="/jobs/new">Create a new job opening</a>
 
-    <form action="/openings/delete" method="post">
+    <form action="/jobs/delete" method="post">
       <button type="submit">Clear All</button>
     </form>
     
