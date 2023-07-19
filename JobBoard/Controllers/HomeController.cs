@@ -24,4 +24,12 @@ using System.Collections.Generic;
       List<JobOpening> allJobOpenings = JobOpening.GetAll();
       return RedirectToAction("Index", allJobOpenings);
     }
+
+    [HttpPost("/openings/delete")]
+    public ActionResult Destroy()
+    {
+      JobOpening.ClearAll();
+      List<JobOpening> allJobOpenings = JobOpening.GetAll();
+      return View("Index", allJobOpenings);
+    }
   }
